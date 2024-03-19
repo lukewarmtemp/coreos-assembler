@@ -64,3 +64,15 @@ pipelines:
             mpp-format-string: '{filename}'
           format:
             type: vhdx
+  - name: zip-with-paths
+    stages:
+      - type: org.osbuild.zip
+        inputs:
+          tree:
+            type: org.osbuild.tree
+            origin: org.osbuild.pipeline
+            references:
+              - name:hyperv
+        options:
+          filename: vhdx-osbuild.zip
+          paths: ['disk.img']

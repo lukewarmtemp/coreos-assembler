@@ -176,7 +176,8 @@ patch_osbuild() {
     mv /usr/bin/osbuild-mpp /usr/lib/osbuild/tools/
 
     # Now all the software is under the /usr/lib/osbuild dir and we can patch
-    cat /usr/lib/coreos-assembler/0004-fscache-add-eviction-log-statement.patch                   \
+    cat /usr/lib/coreos-assembler/0005-zip-stage.patch                                            \
+        /usr/lib/coreos-assembler/0004-fscache-add-eviction-log-statement.patch                   \
         /usr/lib/coreos-assembler/0001-stages-qemu-sanity-check-created-image.patch               \
             | patch -d /usr/lib/osbuild -p1
 
